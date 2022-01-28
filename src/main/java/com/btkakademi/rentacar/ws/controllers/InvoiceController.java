@@ -17,7 +17,7 @@ public class InvoiceController {
         this.invoiceService = invoiceService;
     }
     @PostMapping("add")
-    public Result add(CreateInvoiceRequest createInvoiceRequest){
+    public Result add(@RequestBody CreateInvoiceRequest createInvoiceRequest){
         return this.invoiceService.add(createInvoiceRequest);
     }
 

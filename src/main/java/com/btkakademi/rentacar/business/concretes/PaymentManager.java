@@ -7,7 +7,6 @@ import com.btkakademi.rentacar.core.utilities.business.BusinessRules;
 import com.btkakademi.rentacar.core.utilities.mapping.ModelMapperService;
 import com.btkakademi.rentacar.core.utilities.results.*;
 import com.btkakademi.rentacar.dataAccess.abstratcs.PaymentDao;
-import com.btkakademi.rentacar.entities.concretes.CreditCard;
 import com.btkakademi.rentacar.entities.concretes.Payment;
 import com.btkakademi.rentacar.entities.concretes.Promotion;
 import com.btkakademi.rentacar.entities.concretes.Rental;
@@ -22,15 +21,18 @@ public class PaymentManager implements PaymentService {
     private RentalAdditionalServiceService rentalAdditionalServiceService;
     private PosService posService;
     private PromotionService promotionService;
+    private InvoiceService invoiceService;
 
     @Autowired
-    public PaymentManager(PaymentDao paymentDao, ModelMapperService modelMapperService, RentalService rentalService, RentalAdditionalServiceService rentalAdditionalServiceService, PromotionService promotionService) {
+    public PaymentManager(PaymentDao paymentDao, ModelMapperService modelMapperService, RentalService rentalService, RentalAdditionalServiceService rentalAdditionalServiceService, PosService posService, PromotionService promotionService, InvoiceService invoiceService) {
         this.paymentDao = paymentDao;
         this.modelMapperService = modelMapperService;
         this.rentalService = rentalService;
         this.rentalAdditionalServiceService = rentalAdditionalServiceService;
+        this.posService = posService;
 
         this.promotionService = promotionService;
+        this.invoiceService = invoiceService;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.btkakademi.rentacar;
 
 import com.btkakademi.rentacar.adapters.corporateFindex.CorporateFindexServiceAdapter;
 import com.btkakademi.rentacar.adapters.individualCorporate.IndividualFindexServiceAdapter;
+import com.btkakademi.rentacar.adapters.pos.PosServiceAdapter;
 import com.btkakademi.rentacar.business.abstracts.InvoiceService;
 import com.btkakademi.rentacar.business.concretes.InvoiceManager;
 import org.modelmapper.ModelMapper;
@@ -26,6 +27,8 @@ public class RentACarApplication {
     public IndividualFindexServiceAdapter getFindexServiceAdapter(){return new IndividualFindexServiceAdapter();}
     @Bean
     public CorporateFindexServiceAdapter getFindexServiceCorporateAdapter(){return new CorporateFindexServiceAdapter();}
+    @Bean
+    public PosServiceAdapter getPosServiceAdapter(){return  new PosServiceAdapter();}
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {

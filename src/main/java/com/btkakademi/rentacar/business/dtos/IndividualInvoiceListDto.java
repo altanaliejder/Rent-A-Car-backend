@@ -11,6 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 public class IndividualInvoiceListDto {
     private String carDesciption;
+    private String brand;
+    private String color;
     private double dailyPrice;
     private double totalPrice;
     private List<String> additionalService;

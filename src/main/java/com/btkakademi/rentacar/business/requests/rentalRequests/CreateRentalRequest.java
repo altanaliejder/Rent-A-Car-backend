@@ -9,7 +9,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateRentalRequest {
-    private LocalDate rentDate;
     private LocalDate returnDate;
     private int rentKilometer;
     private int returnedKilometer;

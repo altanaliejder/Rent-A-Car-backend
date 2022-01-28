@@ -64,6 +64,7 @@ public class RentalManager implements RentalService {
         }
 
         if(response==null){
+            rental.setRentDate(LocalDate.now());
             this.rentalDao.save(rental);
             return new SuccessDataResult<Rental>(rental);
         }return new ErrorDataResult<>(response.getMessage());
